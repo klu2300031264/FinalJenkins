@@ -1,4 +1,4 @@
- services:
+services:
   mysqldb:
     image: mysql:8
     container_name: mysql-db
@@ -13,10 +13,10 @@
       - springboot-mysql-net
 
   backend:
-    image: bhargavsai558/2300032558-exam-backend:latest
+    image: joshetha/docker1234-backend:latest
     container_name: springboot
     ports:
-      - "2025:1426"
+      - "2089:1426"
     depends_on:
       - mysqldb
     restart: on-failure
@@ -24,18 +24,18 @@
       - springboot-mysql-net
 
   frontend:
-    image: bhargavsai558/2300032558-exam-frontend:latest
+    image: joshetha/docker1234-frontend:latest
     container_name: react
     ports:
-      - "2001:80"
+      - "3000:80"
     depends_on:
       - backend
     restart: on-failure
     networks:
       - springboot-mysql-net
 
- volumes:
+volumes:
   mysql_data:
 
- networks:
+networks:
   springboot-mysql-net:
