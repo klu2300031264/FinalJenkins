@@ -16,7 +16,7 @@ services:
     image: joshetha/docker1234-backend:latest
     container_name: springboot
     ports:
-      - "2089:1426"
+      - "2025:1426"
     depends_on:
       - mysqldb
     restart: on-failure
